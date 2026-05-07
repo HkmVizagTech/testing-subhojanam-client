@@ -4,6 +4,10 @@ import { useState } from "react";
 import "../styles/thankyou.css";
 import logo from "../assets/logo.png"
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://subhojanam-server-main-882278565284.asia-south1.run.app";
+
 const ThankYouPage = () => {
   const [searchParams] = useSearchParams();
   const [downloading, setDownloading] = useState(false);
@@ -31,7 +35,7 @@ const ThankYouPage = () => {
 
     setDownloading(true);
     try {
-  const response = await fetch(`https://subhojanam-server-main-882278565284.asia-south1.run.app/api/payment/download-receipt/${donationId}`);
+      const response = await fetch(`${API_BASE_URL}/api/payment/download-receipt/${donationId}`);
       
       if (!response.ok) {
         const error = await response.json();

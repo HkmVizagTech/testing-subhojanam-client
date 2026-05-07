@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Lock, FileText, Check } from "lucide-react";
 import "../styles/donation.css";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://subhojanam-server-main-882278565284.asia-south1.run.app";
+
 function DonationSection() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -276,8 +280,7 @@ function DonationSection() {
       } catch {}
 
       const response = await fetch(
-        `https://subhojanam-server-main-882278565284.asia-south1.run.app/api/payment/${endpoint}`,
-        // `http://localhost:8080/api/payment/${endpoint}`,
+        `${API_BASE_URL}/api/payment/${endpoint}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
