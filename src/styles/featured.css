@@ -1,0 +1,110 @@
+.featured-section {
+/* border: 2px solid red; */
+  background: #f4f6f8;
+  padding: 30px 20px;
+  text-align: center;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+.featured-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.featured-title .underline {
+  display: block;
+  width: 55px;
+  height: 3px;
+  background: #28a745;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.featured-logos-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.featured-logos {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: scroll 20s linear infinite;
+  width: fit-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.featured-logos:hover {
+  animation-play-state: paused;
+}
+
+.featured-logos img {
+  height: 100px;             
+  width: 250px;               
+  object-fit: contain;
+  /* filter: grayscale(100%); */
+  opacity: 0.8;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+
+.featured-logos img.indian-express-logo {
+  width: 330px;
+}
+
+/* Hover effect */
+.featured-logos img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .featured-logos {
+    gap: 60px;
+  }
+
+  .featured-logos img {
+    height: 85px;
+    width: 220px;
+  }
+  
+  .featured-logos img.indian-express-logo {
+    width: 290px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-section {
+    padding: 30px 20px;
+    padding-bottom: 40px;
+  }
+
+  .featured-title {
+    margin-bottom: 20px;
+  }
+
+  .featured-logos {
+    gap: 40px;
+  }
+
+  .featured-logos img {
+    height: 70px;
+    width: 180px;
+  }
+  
+  .featured-logos img.indian-express-logo {
+    width: 240px;
+  }
+}

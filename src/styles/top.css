@@ -1,0 +1,59 @@
+.topbar {
+  background: linear-gradient(135deg, #0A97EF 0%, #2196f3 100%);
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.topbar__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 5px;
+  animation: slideDown 0.5s ease;
+}
+
+.topbar-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: white;
+  stroke-width: 2;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.divider {
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .topbar__content {
+    text-align: center;
+    font-size: 11px;
+    
+  }
+}
